@@ -1,0 +1,138 @@
+{
+  "team_strategies": {
+    "balanced": {
+      "description": "Mix of offensive and defensive Pokemon with good type coverage",
+      "role_distribution": {
+        "physical_wall": 1,
+        "special_wall": 1,
+        "physical_sweeper": 1,
+        "special_sweeper": 1,
+        "utility_pivot": 1,
+        "support": 1
+      },
+      "key_features": ["type_coverage", "role_balance", "synergy"],
+      "examples": ["SkarmBliss core with mixed offense"]
+    },
+    "offensive": {
+      "description": "High damage output focused team with multiple sweepers",
+      "role_distribution": {
+        "physical_sweeper": 2,
+        "special_sweeper": 2,
+        "revenge_killer": 1,
+        "support": 1
+      },
+      "key_features": ["high_stats", "speed_control", "coverage"],
+      "examples": ["Choice item users with entry hazards"]
+    },
+    "defensive": {
+      "description": "Stall-focused team that wins through attrition",
+      "role_distribution": {
+        "physical_wall": 2,
+        "special_wall": 2,
+        "support": 1,
+        "utility_pivot": 1
+      },
+      "key_features": ["recovery", "status_moves", "hazards"],
+      "examples": ["Toxic stall with Spikes and recovery"]
+    },
+    "weather": {
+      "description": "Teams built around weather conditions",
+      "role_distribution": {
+        "weather_setter": 1,
+        "weather_abuser": 3,
+        "support": 1,
+        "utility_pivot": 1
+      },
+      "key_features": ["weather_synergy", "speed_boost", "power_boost"],
+      "examples": ["Rain team with Swift Swim", "Sun team with Chlorophyll"]
+    },
+    "hyper_offense": {
+      "description": "Extremely aggressive teams focusing on quick wins",
+      "role_distribution": {
+        "setup_sweeper": 3,
+        "revenge_killer": 2,
+        "support": 1
+      },
+      "key_features": ["setup_moves", "high_risk", "momentum"],
+      "examples": ["Multiple Dragon Dance users"]
+    },
+    "trick_room": {
+      "description": "Teams utilizing Trick Room to reverse speed priority",
+      "role_distribution": {
+        "trick_room_setter": 1,
+        "slow_attacker": 4,
+        "support": 1
+      },
+      "key_features": ["slow_speed", "high_attack", "priority_reversal"],
+      "examples": ["Slow Pokemon with 0 Speed IVs"]
+    }
+  },
+  "common_cores": {
+    "skarmbliss": {
+      "pokemon": ["skarmory", "blissey"],
+      "type": "defensive_core",
+      "effectiveness": 0.9,
+      "description": "Classic physical + special wall combination"
+    },
+    "dragmag": {
+      "pokemon": ["dragonite", "magnezone"],
+      "type": "offensive_core",
+      "effectiveness": 0.85,
+      "description": "Magnezone traps Steel types for Dragonite"
+    },
+    "fire_water_grass": {
+      "pokemon": ["charizard", "blastoise", "venusaur"],
+      "type": "type_core",
+      "effectiveness": 0.75,
+      "description": "Starter triangle with good type coverage"
+    },
+    "sand_core": {
+      "pokemon": ["tyranitar", "garchomp", "gliscor"],
+      "type": "weather_core",
+      "effectiveness": 0.8,
+      "description": "Sandstorm team core with synergy"
+    }
+  },
+  "team_keywords": {
+    "balanced": ["balance", "mix", "versatile", "all-around", "well-rounded"],
+    "offensive": [
+      "offense",
+      "attack",
+      "damage",
+      "sweep",
+      "aggressive",
+      "powerful"
+    ],
+    "defensive": [
+      "defense",
+      "stall",
+      "wall",
+      "tank",
+      "bulky",
+      "outlast",
+      "endure"
+    ],
+    "fast": ["speed", "quick", "fast", "swift", "agile", "first"],
+    "slow": ["slow", "trick room", "tank", "bulky", "heavy"],
+    "weather": ["rain", "sun", "sand", "hail", "weather"],
+    "types": {
+      "fire": ["fire", "flame", "burn", "heat"],
+      "water": ["water", "aqua", "ocean", "sea"],
+      "grass": ["grass", "plant", "nature", "forest"],
+      "electric": ["electric", "thunder", "lightning", "shock"],
+      "ice": ["ice", "freeze", "cold", "winter"],
+      "fighting": ["fight", "martial", "combat", "warrior"],
+      "poison": ["poison", "toxic", "venom"],
+      "ground": ["ground", "earth", "sand", "dirt"],
+      "flying": ["flying", "air", "sky", "wind"],
+      "psychic": ["psychic", "mind", "mental", "psi"],
+      "bug": ["bug", "insect", "swarm"],
+      "rock": ["rock", "stone", "mountain"],
+      "ghost": ["ghost", "spirit", "phantom"],
+      "dragon": ["dragon", "legendary", "mythical"],
+      "dark": ["dark", "shadow", "evil"],
+      "steel": ["steel", "metal", "iron"],
+      "fairy": ["fairy", "magical", "cute", "pink"]
+    }
+  }
+}

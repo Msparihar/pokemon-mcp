@@ -1,0 +1,135 @@
+{
+  "role_definitions": {
+    "physical_wall": {
+      "description": "High Defense stat Pokemon that can tank physical attacks",
+      "stat_requirements": {
+        "defense": 90,
+        "hp": 60
+      },
+      "preferred_stats": ["defense", "hp"],
+      "examples": ["skarmory", "forretress", "steelix", "donphan"]
+    },
+    "special_wall": {
+      "description": "High Special Defense stat Pokemon that can tank special attacks",
+      "stat_requirements": {
+        "sp_defense": 90,
+        "hp": 60
+      },
+      "preferred_stats": ["sp_defense", "hp"],
+      "examples": ["blissey", "umbreon", "cradily", "regice"]
+    },
+    "mixed_wall": {
+      "description": "Balanced defensive stats that can handle both physical and special attacks",
+      "stat_requirements": {
+        "defense": 80,
+        "sp_defense": 80,
+        "hp": 80
+      },
+      "preferred_stats": ["hp", "defense", "sp_defense"],
+      "examples": ["lugia", "giratina", "suicune", "cresselia"]
+    },
+    "physical_sweeper": {
+      "description": "High Attack and Speed Pokemon designed to sweep teams with physical moves",
+      "stat_requirements": {
+        "attack": 100,
+        "speed": 80
+      },
+      "preferred_stats": ["attack", "speed"],
+      "examples": ["garchomp", "salamence", "metagross", "tyranitar"]
+    },
+    "special_sweeper": {
+      "description": "High Special Attack and Speed Pokemon designed to sweep teams with special moves",
+      "stat_requirements": {
+        "sp_attack": 100,
+        "speed": 80
+      },
+      "preferred_stats": ["sp_attack", "speed"],
+      "examples": ["alakazam", "gengar", "charizard", "magnezone"]
+    },
+    "mixed_sweeper": {
+      "description": "High Attack, Special Attack and Speed for unpredictable offense",
+      "stat_requirements": {
+        "attack": 85,
+        "sp_attack": 85,
+        "speed": 80
+      },
+      "preferred_stats": ["attack", "sp_attack", "speed"],
+      "examples": ["dragonite", "salamence", "lucario", "infernape"]
+    },
+    "physical_attacker": {
+      "description": "High Attack Pokemon focused on dealing physical damage",
+      "stat_requirements": {
+        "attack": 95
+      },
+      "preferred_stats": ["attack", "hp"],
+      "examples": ["machamp", "hariyama", "golem", "aggron"]
+    },
+    "special_attacker": {
+      "description": "High Special Attack Pokemon focused on dealing special damage",
+      "stat_requirements": {
+        "sp_attack": 95
+      },
+      "preferred_stats": ["sp_attack", "hp"],
+      "examples": ["chandelure", "rotom", "porygon-z", "magnezone"]
+    },
+    "tank": {
+      "description": "High HP and decent offensive stats for sustained battle presence",
+      "stat_requirements": {
+        "hp": 90,
+        "attack": 70
+      },
+      "preferred_stats": ["hp", "attack", "defense"],
+      "examples": ["snorlax", "wailord", "lapras", "rhyperior"]
+    },
+    "support": {
+      "description": "Pokemon focused on supporting the team with status moves and utility",
+      "stat_requirements": {
+        "hp": 70
+      },
+      "preferred_stats": ["hp", "defense", "sp_defense"],
+      "examples": ["clefable", "chansey", "ditto", "smeargle"]
+    },
+    "utility_pivot": {
+      "description": "Pokemon that provides momentum and utility with switching moves",
+      "stat_requirements": {
+        "speed": 70
+      },
+      "preferred_stats": ["speed", "hp"],
+      "examples": ["rotom-wash", "landorus-t", "scizor", "celebi"]
+    },
+    "revenge_killer": {
+      "description": "Fast Pokemon designed to revenge kill weakened opponents",
+      "stat_requirements": {
+        "speed": 100,
+        "attack": 80
+      },
+      "preferred_stats": ["speed", "attack"],
+      "examples": ["crobat", "aerodactyl", "electrode", "ninjask"]
+    },
+    "setup_sweeper": {
+      "description": "Pokemon that use stat-boosting moves before sweeping",
+      "stat_requirements": {
+        "attack": 85,
+        "speed": 75
+      },
+      "preferred_stats": ["attack", "speed", "hp"],
+      "examples": ["dragonite", "gyarados", "lucario", "blaziken"]
+    }
+  },
+  "stat_ranges": {
+    "very_low": [0, 40],
+    "low": [41, 60],
+    "medium": [61, 80],
+    "high": [81, 100],
+    "very_high": [101, 130],
+    "legendary": [131, 255]
+  },
+  "competitive_tiers": {
+    "OU": "OverUsed - Most powerful and commonly used Pokemon",
+    "UU": "UnderUsed - Strong Pokemon not quite OU level",
+    "RU": "RarelyUsed - Decent Pokemon with specific niches",
+    "NU": "NeverUsed - Less powerful but still viable Pokemon",
+    "PU": "Untiered - Weakest competitive Pokemon",
+    "Uber": "Uber tier - Overpowered Pokemon banned from OU"
+  }
+}
