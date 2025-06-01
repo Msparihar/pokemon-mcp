@@ -1,0 +1,564 @@
+{
+  "id": 6,
+  "name": "charizard",
+  "types": [
+    "fire",
+    "flying"
+  ],
+  "stats": {
+    "hp": 78,
+    "attack": 84,
+    "defense": 78,
+    "special-attack": 109,
+    "special-defense": 85,
+    "speed": 100
+  },
+  "abilities": [
+    {
+      "name": "blaze",
+      "is_hidden": false
+    },
+    {
+      "name": "solar-power",
+      "is_hidden": true
+    }
+  ],
+  "moves": [
+    {
+      "name": "mega-punch",
+      "learn_method": "machine"
+    },
+    {
+      "name": "fire-punch",
+      "learn_method": "machine"
+    },
+    {
+      "name": "thunder-punch",
+      "learn_method": "tutor"
+    },
+    {
+      "name": "scratch",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "swords-dance",
+      "learn_method": "machine"
+    },
+    {
+      "name": "cut",
+      "learn_method": "machine"
+    },
+    {
+      "name": "wing-attack",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "fly",
+      "learn_method": "machine"
+    },
+    {
+      "name": "mega-kick",
+      "learn_method": "machine"
+    },
+    {
+      "name": "headbutt",
+      "learn_method": "machine"
+    },
+    {
+      "name": "body-slam",
+      "learn_method": "machine"
+    },
+    {
+      "name": "take-down",
+      "learn_method": "machine"
+    },
+    {
+      "name": "double-edge",
+      "learn_method": "machine"
+    },
+    {
+      "name": "leer",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "bite",
+      "learn_method": "egg"
+    },
+    {
+      "name": "growl",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "roar",
+      "learn_method": "machine"
+    },
+    {
+      "name": "ember",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "flamethrower",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "hyper-beam",
+      "learn_method": "machine"
+    },
+    {
+      "name": "submission",
+      "learn_method": "machine"
+    },
+    {
+      "name": "counter",
+      "learn_method": "machine"
+    },
+    {
+      "name": "seismic-toss",
+      "learn_method": "machine"
+    },
+    {
+      "name": "strength",
+      "learn_method": "machine"
+    },
+    {
+      "name": "solar-beam",
+      "learn_method": "machine"
+    },
+    {
+      "name": "dragon-rage",
+      "learn_method": "machine"
+    },
+    {
+      "name": "fire-spin",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "earthquake",
+      "learn_method": "machine"
+    },
+    {
+      "name": "fissure",
+      "learn_method": "machine"
+    },
+    {
+      "name": "dig",
+      "learn_method": "machine"
+    },
+    {
+      "name": "toxic",
+      "learn_method": "machine"
+    },
+    {
+      "name": "rage",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "mimic",
+      "learn_method": "machine"
+    },
+    {
+      "name": "double-team",
+      "learn_method": "machine"
+    },
+    {
+      "name": "smokescreen",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "defense-curl",
+      "learn_method": "machine"
+    },
+    {
+      "name": "reflect",
+      "learn_method": "machine"
+    },
+    {
+      "name": "bide",
+      "learn_method": "machine"
+    },
+    {
+      "name": "fire-blast",
+      "learn_method": "machine"
+    },
+    {
+      "name": "swift",
+      "learn_method": "machine"
+    },
+    {
+      "name": "skull-bash",
+      "learn_method": "machine"
+    },
+    {
+      "name": "fury-swipes",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "rest",
+      "learn_method": "machine"
+    },
+    {
+      "name": "rock-slide",
+      "learn_method": "tutor"
+    },
+    {
+      "name": "slash",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "substitute",
+      "learn_method": "machine"
+    },
+    {
+      "name": "snore",
+      "learn_method": "machine"
+    },
+    {
+      "name": "curse",
+      "learn_method": "machine"
+    },
+    {
+      "name": "protect",
+      "learn_method": "machine"
+    },
+    {
+      "name": "scary-face",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "belly-drum",
+      "learn_method": "egg"
+    },
+    {
+      "name": "mud-slap",
+      "learn_method": "machine"
+    },
+    {
+      "name": "outrage",
+      "learn_method": "tutor"
+    },
+    {
+      "name": "sandstorm",
+      "learn_method": "machine"
+    },
+    {
+      "name": "endure",
+      "learn_method": "machine"
+    },
+    {
+      "name": "false-swipe",
+      "learn_method": "machine"
+    },
+    {
+      "name": "swagger",
+      "learn_method": "machine"
+    },
+    {
+      "name": "fury-cutter",
+      "learn_method": "machine"
+    },
+    {
+      "name": "steel-wing",
+      "learn_method": "machine"
+    },
+    {
+      "name": "attract",
+      "learn_method": "machine"
+    },
+    {
+      "name": "sleep-talk",
+      "learn_method": "machine"
+    },
+    {
+      "name": "return",
+      "learn_method": "machine"
+    },
+    {
+      "name": "frustration",
+      "learn_method": "machine"
+    },
+    {
+      "name": "dynamic-punch",
+      "learn_method": "machine"
+    },
+    {
+      "name": "dragon-breath",
+      "learn_method": "machine"
+    },
+    {
+      "name": "iron-tail",
+      "learn_method": "machine"
+    },
+    {
+      "name": "metal-claw",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "hidden-power",
+      "learn_method": "machine"
+    },
+    {
+      "name": "twister",
+      "learn_method": "tutor"
+    },
+    {
+      "name": "sunny-day",
+      "learn_method": "machine"
+    },
+    {
+      "name": "crunch",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "ancient-power",
+      "learn_method": "egg"
+    },
+    {
+      "name": "rock-smash",
+      "learn_method": "machine"
+    },
+    {
+      "name": "beat-up",
+      "learn_method": "machine"
+    },
+    {
+      "name": "heat-wave",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "will-o-wisp",
+      "learn_method": "machine"
+    },
+    {
+      "name": "facade",
+      "learn_method": "machine"
+    },
+    {
+      "name": "focus-punch",
+      "learn_method": "machine"
+    },
+    {
+      "name": "helping-hand",
+      "learn_method": "machine"
+    },
+    {
+      "name": "brick-break",
+      "learn_method": "machine"
+    },
+    {
+      "name": "secret-power",
+      "learn_method": "machine"
+    },
+    {
+      "name": "blaze-kick",
+      "learn_method": "machine"
+    },
+    {
+      "name": "blast-burn",
+      "learn_method": "tutor"
+    },
+    {
+      "name": "weather-ball",
+      "learn_method": "machine"
+    },
+    {
+      "name": "air-cutter",
+      "learn_method": "tutor"
+    },
+    {
+      "name": "overheat",
+      "learn_method": "machine"
+    },
+    {
+      "name": "rock-tomb",
+      "learn_method": "machine"
+    },
+    {
+      "name": "aerial-ace",
+      "learn_method": "machine"
+    },
+    {
+      "name": "dragon-claw",
+      "learn_method": "machine"
+    },
+    {
+      "name": "dragon-dance",
+      "learn_method": "machine"
+    },
+    {
+      "name": "roost",
+      "learn_method": "machine"
+    },
+    {
+      "name": "natural-gift",
+      "learn_method": "machine"
+    },
+    {
+      "name": "tailwind",
+      "learn_method": "tutor"
+    },
+    {
+      "name": "fling",
+      "learn_method": "machine"
+    },
+    {
+      "name": "flare-blitz",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "air-slash",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "dragon-pulse",
+      "learn_method": "machine"
+    },
+    {
+      "name": "dragon-rush",
+      "learn_method": "egg"
+    },
+    {
+      "name": "focus-blast",
+      "learn_method": "machine"
+    },
+    {
+      "name": "giga-impact",
+      "learn_method": "machine"
+    },
+    {
+      "name": "shadow-claw",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "fire-fang",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "defog",
+      "learn_method": "machine"
+    },
+    {
+      "name": "captivate",
+      "learn_method": "machine"
+    },
+    {
+      "name": "ominous-wind",
+      "learn_method": "tutor"
+    },
+    {
+      "name": "hone-claws",
+      "learn_method": "machine"
+    },
+    {
+      "name": "flame-burst",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "flame-charge",
+      "learn_method": "machine"
+    },
+    {
+      "name": "round",
+      "learn_method": "machine"
+    },
+    {
+      "name": "echoed-voice",
+      "learn_method": "machine"
+    },
+    {
+      "name": "sky-drop",
+      "learn_method": "machine"
+    },
+    {
+      "name": "incinerate",
+      "learn_method": "machine"
+    },
+    {
+      "name": "acrobatics",
+      "learn_method": "machine"
+    },
+    {
+      "name": "inferno",
+      "learn_method": "level-up"
+    },
+    {
+      "name": "fire-pledge",
+      "learn_method": "tutor"
+    },
+    {
+      "name": "bulldoze",
+      "learn_method": "machine"
+    },
+    {
+      "name": "dragon-tail",
+      "learn_method": "machine"
+    },
+    {
+      "name": "work-up",
+      "learn_method": "machine"
+    },
+    {
+      "name": "heat-crash",
+      "learn_method": "machine"
+    },
+    {
+      "name": "hurricane",
+      "learn_method": "machine"
+    },
+    {
+      "name": "confide",
+      "learn_method": "machine"
+    },
+    {
+      "name": "mystical-fire",
+      "learn_method": "machine"
+    },
+    {
+      "name": "power-up-punch",
+      "learn_method": "machine"
+    },
+    {
+      "name": "brutal-swing",
+      "learn_method": "machine"
+    },
+    {
+      "name": "breaking-swipe",
+      "learn_method": "machine"
+    },
+    {
+      "name": "scale-shot",
+      "learn_method": "tutor"
+    },
+    {
+      "name": "dual-wingbeat",
+      "learn_method": "tutor"
+    },
+    {
+      "name": "scorching-sands",
+      "learn_method": "tutor"
+    },
+    {
+      "name": "tera-blast",
+      "learn_method": "machine"
+    },
+    {
+      "name": "dragon-cheer",
+      "learn_method": "machine"
+    },
+    {
+      "name": "temper-flare",
+      "learn_method": "machine"
+    }
+  ],
+  "base_experience": 267,
+  "height": 17,
+  "weight": 905,
+  "species": {
+    "name": "charizard",
+    "generation": "generation-i",
+    "growth_rate": "medium-slow",
+    "egg_groups": [
+      "monster",
+      "dragon"
+    ]
+  }
+}

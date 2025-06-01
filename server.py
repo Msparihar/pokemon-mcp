@@ -1,7 +1,12 @@
 # server.py
 from mcp.server.fastmcp import FastMCP
 import requests
-from typing import Dict, Any, Optional
+import json
+from typing import Dict, Any, Optional, List
+from modules.battle_analyzer import BattleAnalyzer
+from modules.team_builder import TeamBuilder
+from modules.team_archetypes import TeamArchetypes
+from utils.type_calculator import TypeCalculator
 
 # Create an MCP server
 mcp = FastMCP(
@@ -9,6 +14,11 @@ mcp = FastMCP(
     host="0.0.0.0",
     port=8050,
 )
+
+battle_analyzer = BattleAnalyzer()
+team_builder = TeamBuilder()
+team_archetypes = TeamArchetypes()
+type_calculator = TypeCalculator()
 
 # Base URL for PokéAPI
 POKEAPI_BASE = "https://pokeapi.co/api/v2"
@@ -24,7 +34,38 @@ def fetch_pokemon_data(endpoint: str) -> Optional[Dict[str, Any]]:
         return {"error": f"Failed to fetch data: {str(e)}"}
 
 
-# Pokemon Tools
+# Competitive Analysis Tools
+@mcp.tool()
+def get_type_effectiveness(attacking_type: str, defending_types: List[str], context: str = "") -> Dict[str, Any]:
+    """Get detailed type effectiveness analysis."""
+    return type_calculator.get_effectiveness(attacking_type, defending_types)
+
+
+@mcp.tool()
+def build_balanced_team(
+    core_pokemon: str, format: str = "OU", style: str = "balanced", excluded_types: List[str] = None
+) -> Dict[str, Any]:
+    """Build a balanced team around a core Pokemon."""
+    return team_builder.build_team(core_pokemon, format, style, excluded_types or [])
+
+
+@mcp.tool()
+def get_team_archetype(
+    archetype: str, format: str = "OU", key_pokemon: Optional[str] = None, style: str = "balanced"
+) -> Dict[str, Any]:
+    """Get team suggestions for specific archetypes."""
+    return team_archetypes.get_team_suggestion(archetype, format, key_pokemon, style)
+
+
+@mcp.tool()
+def predict_matchup(
+    team1: List[str], team2: List[str], format: str = "OU", scoring_priority: str = "overall"
+) -> Dict[str, Any]:
+    """Predict battle outcome between two teams."""
+    return battle_analyzer.predict_matchup(team1, team2, format, scoring_priority)
+
+
+# Pokemon Data Tools
 @mcp.tool()
 def get_pokemon(name_or_id: str) -> Dict[str, Any]:
     """Get detailed information about a specific Pokémon by name or ID"""
@@ -107,6 +148,7 @@ def compare_pokemon_stats(pokemon1: str, pokemon2: str) -> Dict[str, Any]:
     return stats_comparison
 
 
+# Resource Formatters
 @mcp.resource("pokemon://{name_or_id}")
 def get_pokemon_resource(name_or_id: str) -> str:
     """Get Pokémon data as a formatted resource"""

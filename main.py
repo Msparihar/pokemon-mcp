@@ -11,6 +11,50 @@ from mcp.client.sse import sse_client
 from openai import AsyncOpenAI
 
 nest_asyncio.apply()
+
+SYSTEM_PROMPT = """You are a Pokémon Battle Expert and Team Building Specialist. You help trainers build competitive teams and analyze battle strategies using official Pokémon data from the PokeAPI.
+
+Your capabilities include:
+1. Type Analysis: Calculate effectiveness of moves and analyze defensive/offensive type coverage
+2. Team Building: Create balanced teams considering type synergies, roles, and common threats
+3. Battle Analysis: Predict matchup outcomes and suggest counters
+4. Pokémon Data: Access detailed information about Pokémon, their moves, and abilities
+
+Tool Usage:
+- Combine multiple tools when needed for comprehensive analysis
+- For team building: Use type effectiveness + team building tools together
+- For matchup analysis: Combine battle analysis with type effectiveness
+- For detailed recommendations: Combine Pokémon data with team archetypes
+- Always cross-reference findings between tools for accuracy
+
+When responding:
+- Always explain your reasoning for team building suggestions
+- Break down type effectiveness calculations clearly
+- Consider competitive viability and common strategies
+- Suggest specific moves and abilities that complement team composition
+
+Format your explanations in clear sections:
+1. Analysis: Initial assessment of the request
+2. Recommendations: Specific suggestions with explanations
+3. Additional Considerations: Coverage, weaknesses, and alternative options"""
+
+WELCOME_MESSAGE = """Welcome to the Pokémon Team Builder and Battle Analyst! 🎮
+
+I can help you with:
+• Building competitive teams
+• Analyzing type matchups
+• Checking move effectiveness
+• Predicting battle outcomes
+• Finding counters to specific Pokémon
+
+Try asking me things like:
+"Build a rain team around Pelipper"
+"Check the effectiveness of Fire moves against Ferrothorn"
+"Analyze a matchup between my team and my opponent's"
+"Suggest counters to Dragapult"
+
+What would you like help with today?"""
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 
 # Load environment variables
@@ -111,8 +155,9 @@ async def process_query(query: str) -> str:
     assistant_message = response.choices[0].message
     logging.info("Received initial response from OpenAI")
 
-    # Initialize conversation with user query and assistant response
+    # Initialize conversation with system prompt, user query and assistant response
     messages = [
+        {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": query},
         assistant_message,
     ]
@@ -176,6 +221,7 @@ async def get():
     <html>
         <head>
             <title>OpenAI Chat</title>
+            <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
             <style>
                 body {
                     font-family: Arial, sans-serif;
@@ -195,14 +241,54 @@ async def get():
                     height: 400px;
                     overflow-y: auto;
                     margin-bottom: 20px;
-                    padding: 10px;
+                    padding: 16px;
                     border: 1px solid #ddd;
                     border-radius: 4px;
+                    line-height: 1.5;
                 }
                 .message {
-                    margin-bottom: 10px;
-                    padding: 8px;
+                    margin-bottom: 16px;
+                    padding: 12px;
                     border-radius: 4px;
+                    overflow-wrap: break-word;
+                }
+                /* Code blocks */
+                .message pre {
+                    background: #f6f8fa;
+                    padding: 12px;
+                    border-radius: 4px;
+                    overflow-x: auto;
+                }
+                .message code {
+                    font-family: 'Consolas', monospace;
+                    font-size: 0.9em;
+                }
+                /* Lists */
+                .message ul, .message ol {
+                    padding-left: 20px;
+                    margin: 8px 0;
+                }
+                /* Tables */
+                .message table {
+                    border-collapse: collapse;
+                    width: 100%;
+                    margin: 12px 0;
+                }
+                .message th, .message td {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    text-align: left;
+                }
+                /* Headings */
+                .message h1, .message h2, .message h3 {
+                    margin: 16px 0 8px 0;
+                }
+                /* Blockquotes */
+                .message blockquote {
+                    border-left: 4px solid #ddd;
+                    margin: 8px 0;
+                    padding-left: 12px;
+                    color: #666;
                 }
                 .user-message {
                     background-color: #e3f2fd;
@@ -258,10 +344,18 @@ async def get():
                     addMessage('bot', 'Connection closed. Please refresh the page to reconnect.');
                 };
 
+                // Configure marked options
+                marked.setOptions({
+                    sanitize: true,
+                    sanitizer: function(html) {
+                        return html;
+                    }
+                });
+
                 function addMessage(sender, content) {
                     const messageDiv = document.createElement('div');
                     messageDiv.className = `message ${sender}-message`;
-                    messageDiv.textContent = content;
+                    messageDiv.innerHTML = marked.parse(content); // Parse markdown
                     messagesDiv.appendChild(messageDiv);
                     messagesDiv.scrollTop = messagesDiv.scrollHeight;
                 }
@@ -302,7 +396,7 @@ async def websocket_endpoint(websocket: WebSocket):
         logging.info(f"Server connection established [ID: {client_id}]")
 
         # Send welcome message
-        await websocket.send_text("Connected to OpenAI Chat. How can I help you?")
+        await websocket.send_text(WELCOME_MESSAGE)
         logging.info(f"Welcome message sent [ID: {client_id}]")
 
         while True:
