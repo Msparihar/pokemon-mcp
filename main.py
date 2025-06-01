@@ -10,7 +10,6 @@ from mcp import ClientSession
 from mcp.client.sse import sse_client
 from openai import AsyncOpenAI
 
-nest_asyncio.apply()
 
 SYSTEM_PROMPT = """You are a Pokémon Battle Expert and Team Building Specialist. You help trainers build competitive teams and analyze battle strategies using official Pokémon data from the PokeAPI.
 
